@@ -7,3 +7,11 @@ xargs nl, expand, unexpand, uniq
 xargs macht aus nicht filterprogrammen filterprogramme
 is, cp, mv, rm, ping, netstat, mkdir, cd, rmdir, find, pwd, date, man ,apropos, whatis,
 whoami, info, type, file, whereis, who, w, user, stat, df, free, top, uptime, uname, id, touch
+
+tr translate keine dateiennamen, einzelne zeichen löschen, ersetzen
+
+echo Bärenhöhle | tr 'a-zäöü' 'A-Z'
+B??RENH??HLE
+ -d delete löscht zeichen X
+ -s squeeze entfernt jedes zeichen bis auf eines
+ Sonderzeichen sind möglich, benannte Bereiche nach POSIX [:alpha:] alle Buchstaben, inklusve umlaute
