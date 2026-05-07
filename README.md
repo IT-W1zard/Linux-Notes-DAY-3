@@ -43,41 +43,46 @@ sort
 
 [^...] genau 1 Zeichen aus der Nicht angegebenen Zeichenmenge ansonsten wie [...] aufer . am Namensanfang  
 
-{dat..,V...xyz} erlaubt mehrere Dat/Verz Namen mit obigen Sonderzeichen ACHTUNG: Keine Leerzeichen
+{dat..,V...xyz} erlaubt mehrere Dat/Verz Namen mit obigen Sonderzeichen ACHTUNG: Keine Leerzeichen  
 
 
 
-| Trennt Kommandos unabhänigig voneinander
+| Trennt Kommandos unabhänigig voneinander  
 
-; kommandos werden nacheinander ausgeführt sind unabhängig voneinander Ausführung:nacheinander
+; kommandos werden nacheinander ausgeführt sind unabhängig voneinander Ausführung:nacheinander  
 
-- Kommandos sind unabhängig voneinander ausführung: quasi gleichzeitig
-
-
-
-&& verkürztes if: arbeitet cmd1 korrekt dann wird cmd2 ausgeführt
-
-|| verkürztes if arbeitet cmd1 fehlerhaft wird cmd 2 ausgefphrt
-
-echo $? zum prüfen ob richtig ausgeführt RS: >0 RS: =0
+- Kommandos sind unabhängig voneinander ausführung: quasi gleichzeitig  
 
 
 
-\ entzieht dem nachfolgenden Zeichen die Sonderbedeutung
+&& verkürztes if: arbeitet cmd1 korrekt dann wird cmd2 ausgeführt  
 
-' ' entzieht allen zeichen die Sonderbedeutung
+|| verkürztes if arbeitet cmd1 fehlerhaft wird cmd 2 ausgefphrt  
 
-´´ ´´ ist ähnlich wie ' ', aber die Sonderbedeutung bleibt bestehen
-
-
-
-^ alles hier nach NICHT BEACHTEN
+echo $? zum prüfen ob richtig ausgeführt RS: >0 RS: =0  
 
 
 
-() alles in der () wird wie EIN kommando gesehen u in einer Subshell ausgeführt KOmmandosubstitution
-Subshell
-$[] Kommandosubstitution
-[] [^ ] Datei-Verz.-Expansion, Filterzeichen
-{} wie () aber in der momentanen Shell
-{} Variablensubstitution
+\ entzieht dem nachfolgenden Zeichen die Sonderbedeutung  
+
+' ' entzieht allen zeichen die Sonderbedeutung  
+
+´´ ´´ ist ähnlich wie ' ', aber die Sonderbedeutung bleibt bestehen  
+
+
+
+^ alles hier nach NICHT BEACHTEN  
+
+
+
+() alles in der () wird wie EIN kommando gesehen u in einer Subshell ausgeführt KOmmandosubstitution  
+Subshell  
+$[] Kommandosubstitution  
+[] [^ ] Datei-Verz.-Expansion, Filterzeichen  
+{} wie () aber in der momentanen Shell  
+{} Variablensubstitution  
+
+
+
+-rw programm
+drw directory/verzeichniss
