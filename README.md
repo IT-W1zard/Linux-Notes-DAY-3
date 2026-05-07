@@ -62,3 +62,22 @@ sort
 echo $? zum prüfen ob richtig ausgeführt RS: >0 RS: =0
 
 
+
+\ entzieht dem nachfolgenden Zeichen die Sonderbedeutung
+
+' ' entzieht allen zeichen die Sonderbedeutung
+
+´´ ´´ ist ähnlich wie ' ', aber die Sonderbedeutung bleibt bestehen
+
+
+
+^ alles hier nach NICHT BEACHTEN
+
+
+
+() alles in der () wird wie EIN kommando gesehen u in einer Subshell ausgeführt KOmmandosubstitution
+Subshell
+$[] Kommandosubstitution
+[] [^ ] Datei-Verz.-Expansion, Filterzeichen
+{} wie () aber in der momentanen Shell
+{} Variablensubstitution
