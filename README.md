@@ -86,3 +86,19 @@ $[] Kommandosubstitution
 
 -rw programm
 drw directory/verzeichniss
+l symbolische links
+
+
+
+[ONMO@localhost ~]$ mkdir Ort && touch ./Ort/dat1
+[ONMO@localhost ~]$ ls ./Ort
+dat1
+[ONMO@localhost ~]$ 
+
+
+
+[ONMO@localhost ~]$ true && echo Wahr || echo Fehler
+Wahr
+[ONMO@localhost ~]$ false && echo Wahr || echo Fehler
+Fehler
+[ONMO@localhost ~]$ 
