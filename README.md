@@ -28,5 +28,20 @@ cut -c 1-3,5/etc/passwd
  -f einzelne Felder - gibt wie viele stops an  
  -s separator, Verhindert die Ausgabe von Feldern ohne Trennzeichen - macht einen stop bei leerzeichen  
 
- cut -d: -f1,5 /etc/passwd  
+cut -d: -f1,5 /etc/passwd  
+
+sort
+-n sortiert alphanumerisch
+-r sortierreihenfolge umkehren
+-u nur einmalige Werte, keine dubletten
+
+* steht für alle zeichen außer für . am Namensanfang; auch kein Zeichen
+
+? genau 1 beliebiges Zeichen außer . am Namensanfang
+
+[....] genau ein Zeichen der angegebenen Zeichen menge außer . am Namensanfang
+
+[^...] genau 1 Zeichen aus der Nicht angegebenen Zeichenmenge ansonsten wie [...] aufer . am Namensanfang  
+
+{dat..,V...xyz} erlaubt mehrere Dat/Verz Namen mit obigen Sonderzeichen ACHTUNG: Keine Leerzeichen
 
