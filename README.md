@@ -23,8 +23,10 @@ echo Bären---höhle | tr -s '-' '\n'   Ergebniss= BärenZEILENUMBRUCHhöhle
 
 Cut vertikal durch einen Text -c character zeichen  
 cut -c 1-3,5/etc/passwd  
- -d delimiter z.B. der Doppelpunkt - gibt den Stop and 
- -f einzelne Felder - gibt wie viele stops an
- -s separator, Verhindert die Ausgabe von Feldern ohne Trennzeichen - macht einen stop bei leerzeichen
 
- cut -d: -f1,5 /etc/passwd
+ -d delimiter z.B. der Doppelpunkt - gibt den Stop and 
+ -f einzelne Felder - gibt wie viele stops an  
+ -s separator, Verhindert die Ausgabe von Feldern ohne Trennzeichen - macht einen stop bei leerzeichen  
+
+ cut -d: -f1,5 /etc/passwd  
+
