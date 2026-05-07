@@ -45,3 +45,11 @@ sort
 
 {dat..,V...xyz} erlaubt mehrere Dat/Verz Namen mit obigen Sonderzeichen ACHTUNG: Keine Leerzeichen
 
+
+
+| Trennt Kommandos unabhänigig voneinander
+
+; kommandos werden nacheinander ausgeführt sind unabhängig voneinander Ausführung:nacheinander
+
+- Kommandos sind unabhängig voneinander ausführung: quasi gleichzeitig
+
