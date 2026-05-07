@@ -13,5 +13,5 @@ tr translate keine dateiennamen, einzelne zeichen löschen, ersetzen
 echo Bärenhöhle | tr 'a-zäöü' 'A-Z'
 B??RENH??HLE
  -d delete löscht zeichen X
- -s squeeze entfernt jedes zeichen bis auf eines
+ -s squeeze entfernt jedes zeichen bis auf eines in einer reiche von zeichen Bären------höhle Bären-höhle
  Sonderzeichen sind möglich, benannte Bereiche nach POSIX [:alpha:] alle Buchstaben, inklusve umlaute
