@@ -53,3 +53,12 @@ sort
 
 - Kommandos sind unabhängig voneinander ausführung: quasi gleichzeitig
 
+
+
+&& verkürztes if: arbeitet cmd1 korrekt dann wird cmd2 ausgeführt
+
+|| verkürztes if arbeitet cmd1 fehlerhaft wird cmd 2 ausgefphrt
+
+echo $? zum prüfen ob richtig ausgeführt RS: >0 RS: =0
+
+
