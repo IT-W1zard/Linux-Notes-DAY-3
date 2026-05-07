@@ -84,6 +84,16 @@ $[] Kommandosubstitution
 
 
 
+[ONMO@localhost ~]$ cd /etc; echo "Aktuelle Shell: $(pwd)" 
+Aktuelle Shell: /etc
+[ONMO@localhost etc]$ cd ~                           <--- Wechsel zu /etc
+[ONMO@localhost ~]$ (cd /etc; echo "Aktuelle Shell: $(pwd)") 
+Aktuelle Shell: /etc                                 <--- Springt unsichtbar in die Subshell um den Befehl dort auszuführen
+[ONMO@localhost ~]$                                  <--- Wegen () noch in der akutellen Shell 
+
+
+
+
 -rw programm
 drw directory/verzeichniss
 l symbolische links
@@ -102,3 +112,12 @@ Wahr
 [ONMO@localhost ~]$ false && echo Wahr || echo Fehler
 Fehler
 [ONMO@localhost ~]$ 
+
+
+
+[ONMO@localhost ~]$ echo ${USER}123
+ONMO123
+
+
+
+
