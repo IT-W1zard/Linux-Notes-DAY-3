@@ -85,38 +85,38 @@ $[] Kommandosubstitution
 
 
 [ONMO@localhost ~]$ cd /etc; echo "Aktuelle Shell: $(pwd)" 
-Aktuelle Shell: /etc
-[ONMO@localhost etc]$ cd ~                           <--- Wechsel zu /etc
-[ONMO@localhost ~]$ (cd /etc; echo "Aktuelle Shell: $(pwd)") 
-Aktuelle Shell: /etc                                 <--- Springt unsichtbar in die Subshell um den Befehl dort auszuführen
-[ONMO@localhost ~]$                                  <--- Wegen () noch in der akutellen Shell 
+Aktuelle Shell: /etc  
+[ONMO@localhost etc]$ cd ~                           <--- Wechsel zu /etc  
+[ONMO@localhost ~]$ (cd /etc; echo "Aktuelle Shell: $(pwd)")   
+Aktuelle Shell: /etc                                 <--- Springt unsichtbar in die Subshell um den Befehl dort auszuführen  
+[ONMO@localhost ~]$                                  <--- Wegen () noch in der akutellen Shell   
 
 
 
 
--rw programm
-drw directory/verzeichniss
-l symbolische links
+-rw programm  
+drw directory/verzeichniss  
+l symbolische links  
 
 
 
-[ONMO@localhost ~]$ mkdir Ort && touch ./Ort/dat1
-[ONMO@localhost ~]$ ls ./Ort
-dat1
-[ONMO@localhost ~]$ 
+[ONMO@localhost ~]$ mkdir Ort && touch ./Ort/dat1  
+[ONMO@localhost ~]$ ls ./Ort  
+dat1  
+[ONMO@localhost ~]$  
 
 
 
-[ONMO@localhost ~]$ true && echo Wahr || echo Fehler
-Wahr
-[ONMO@localhost ~]$ false && echo Wahr || echo Fehler
-Fehler
-[ONMO@localhost ~]$ 
+[ONMO@localhost ~]$ true && echo Wahr || echo Fehler  
+Wahr  
+[ONMO@localhost ~]$ false && echo Wahr || echo Fehler  
+Fehler  
+[ONMO@localhost ~]$  
 
 
 
-[ONMO@localhost ~]$ echo ${USER}123
-ONMO123
+[ONMO@localhost ~]$ echo ${USER}123  
+ONMO123  
 
 
 
