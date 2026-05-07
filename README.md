@@ -15,3 +15,9 @@ B??RENH??HLE
  -d delete löscht zeichen X vom text Bären-höhle Bärenhöhle 
  -s squeeze entfernt jedes zeichen bis auf eines in einer reiche von zeichen Bären------höhle Bären-höhle  
  Sonderzeichen sind möglich, benannte Bereiche nach POSIX [:alpha:] alle Buchstaben, inklusve umlaute  
+
+echo Bären---höhle | tr -s '-'        Ergebniss= Bären-höhle
+echo Bären---höhle | tr -s '-' '\'    Ergebniss= Bären\höhle
+echo Bären---höhle | tr -s '-' '\t'   Ergebniss= Bären höhle
+echo Bären---höhle | tr -s '-' '\n'   Ergebniss= Bären
+                                                 höhle
