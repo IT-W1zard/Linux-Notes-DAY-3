@@ -164,3 +164,12 @@ getfacl zeug zeigt mir alle Rechte einer Datei
 andere option ls -l
 
 umask ändert die rechte um einen wert standard 777 (innerhalb des verzeichnisses) umask 0|022 Verzeichnis Rechte 755 - Datei Rechte wenn ungerade Execute rechte abziehen also -1 wenn nicht bleibt gleich 644 Ergebniss
+
+U s steht für SUID Set User ID Bit
+
+G s steht für SGID Set Group ID Bit
+
+O t steht für Sticky Bit Verz mit allen rechten aber ursprüngliche Rechte bleiben "kleben"
+
+
+
