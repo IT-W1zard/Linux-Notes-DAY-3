@@ -119,6 +119,21 @@ Fehler
 [ONMO@localhost ~]$ echo ${USER}123  
 ONMO123  
 
+# DAY4
 
+Zugriffsrechte unter Unix
 
+- Datei
+- d Verzeichnis
+- l softlink
+- c Character Device
+- b Block Device
+- p Named Pipe
+- s Unix Domain Socket
 
+drwxr-xr-x. 2 semus semus 4096 25 Jan 12:31
+-rw-r--r--. 1 semus semus 4410 30 jan 13:53
+
+ Anzahl | Username | Gruppenname | Größe | Datum | Dat.Verz |
+
+ 
