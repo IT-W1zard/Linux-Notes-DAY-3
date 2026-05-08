@@ -132,8 +132,21 @@ Zugriffsrechte unter Unix
 - s Unix Domain Socket
 
 drwxr-xr-x. 2 semus semus 4096 25 Jan 12:31
--rw-r--r--. 1 semus semus 4410 30 jan 13:53
+-rw-r--r--. 1 semus semus 4410 30 jan 13:53 semus
 
  Anzahl | Username | Gruppenname | Größe | Datum | Dat.Verz |
+-------------------------------------------------------------
+r Datei:Lesen Verz: Inhalt auflisten
+w Datei: änderbar Verz: Einträge Löschen/anlegen/ändern
+x Datei: Execute Recht Verz: cd Recht
+--------------------------------------------------------------
+4 2 1 = 7 
+r w x 
 
- 
+4   1 = 5
+r   x 
+
+usw
+
+Man kann 1 also x nur von ungerade zahlen abziehen
+
