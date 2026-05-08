@@ -159,3 +159,8 @@ a OTHERS
 
  USER GROUP OTHERS
 l rwx  rwx   rwx
+
+getfacl zeug zeigt mir alle Rechte einer Datei
+andere option ls -l
+
+umask ändert die rechte um einen wert standard 777 (innerhalb des verzeichnisses) umask 0|022 Verzeichnis Rechte 755 - Datei Rechte wenn ungerade Execute rechte abziehen also -1 wenn nicht bleibt gleich 644 Ergebniss
