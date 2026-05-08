@@ -150,3 +150,12 @@ usw
 
 Man kann 1 also x nur von ungerade zahlen abziehen
 
+Rechte entfernen chmod u-w DATEI
+Rechte hinzufügen chmod u+w DATEI
+
+u USER
+g GROUP
+a OTHERS
+
+ USER GROUP OTHERS
+l rwx  rwx   rwx
