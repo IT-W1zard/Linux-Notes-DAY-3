@@ -14,17 +14,18 @@ echo Bärenhöhle | tr 'a-zäöü' 'A-Z'
 B??RENH??HLE  
  -d delete löscht zeichen X vom text Bären-höhle Bärenhöhle  
  -s squeeze entfernt jedes zeichen bis auf eines in einer reiche von zeichen Bären------höhle Bären-höhle  
+   
  Sonderzeichen sind möglich, benannte Bereiche nach POSIX [:alpha:] alle Buchstaben, inklusve umlaute  
 
 echo Bären---höhle | tr -s '-'        Ergebniss= Bären-höhle  
 echo Bären---höhle | tr -s '-' '\'    Ergebniss= Bären\höhle  
 echo Bären---höhle | tr -s '-' '\t'   Ergebniss= Bären höhle  
-echo Bären---höhle | tr -s '-' '\n'   Ergebniss= BärenZEILENUMBRUCHhöhle    
+echo Bären---höhle | tr -s '-' '\n'   Ergebniss= BärenZEILENUMBRUCHhöhle  
 
 Cut vertikal durch einen Text -c character zeichen  
 cut -c 1-3,5/etc/passwd  
 
- -d delimiter z.B. der Doppelpunkt - gibt den Stop and 
+ -d delimiter z.B. der Doppelpunkt - gibt den Stop and  
  -f einzelne Felder - gibt wie viele stops an  
  -s separator, Verhindert die Ausgabe von Feldern ohne Trennzeichen - macht einen stop bei leerzeichen  
 
