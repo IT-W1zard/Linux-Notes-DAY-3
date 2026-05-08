@@ -173,3 +173,6 @@ O t steht für Sticky Bit Verz mit allen rechten aber ursprüngliche Rechte blei
 
 
 
+Hardlink In ./Ort/HARDLINK /Ort/HARDZIEL
+Softlink In -s ./Ort .Ziel/
+
