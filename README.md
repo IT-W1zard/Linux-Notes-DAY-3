@@ -234,3 +234,10 @@ renice zahl pid    greift auf laufende Prozess zu und verändert den Wert über 
 
 
 pstree -p Praktisch Tree + alle verzweigungen
+
+
+sudo renice -5 PROZESS ID
+
+innerhalb des top befehls
+strg + z SigStopp
+strg + c Siginterrupt
