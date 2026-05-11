@@ -188,4 +188,49 @@ Hardlink counter Dateien 1 / Verzeichenisse 2 (alles wegen Ebenen)
 # DAY5
 
 
+echo $? -prüft ob der vorherige befehl funktiniert hat 0=Ja alles andere ist die anzahl der fehler
 
+echo $ "variable" gibt variable aus wie z.B. 4 5 oder hallo
+
+
+
+Kennwerte: unter/proc
+PID Process ID; eine eindeutige Prozessnummer
+PPID Parent process ID; alle Prozesse kennen die Nummer des Elrernprozesses
+UID, GID User ID, Group ID; Benutzer von denen der Prozess erzeugt wurde
+PRI, NI priority, nice; Scheduler: Verteilung der Zeitscheiben nach Priorität; Prozesse: Eingabe-,
+        Ausgabeoperation >PRI als Prozesse, die nur Rechenzeit verbrauchen; PRI kann nicht geändert
+        werden 
+
+
+## Der Kernel -
+Initalisiert die Hardware und startet den 1.Prozess:
+init (früher)
+systemd (heute Linux) forking(gabel. = Prozessverdopplung)
+
+process listing
+ps, ps a, ps ax ohne -  ps -e, ps -ef mit ,-´ Tipp: man ps, pstree -p zeigt Prozess Baumliste
+ps       zeigt alle über eine auswahl der activen prozesse
+ps a     das gleiche wie ps aber in einem anderen style
+ps ax    um jeden prozess zu sehen der BSD Syntax benutzt
+
+ps -e    um alle prozesse auf dem System zu sehen
+ps -ef
+
+
+
+kill -SIGNAL pid (pid= Process ID)
+killall prozessname
+kill -l Listet ale Signale mit Name u. Zahl default SIGTERM(15)
+
+
+
+nice -n cmd macht Befehle freundlicher, höhere Nice-Wert geringe Priorität, negative Werte nur als root
+möglich; Setzt default +10 wenn keine Zahl hinter dem Kommando eingeben wurde
+Nice-Werte: -20 bs 19, default gesetzt: 0
+
+renice zahl pid    greift auf laufende Prozess zu und verändert den Wert über Prozess-ID
+
+
+
+pstree -p Praktisch Tree + alle verzweigungen
