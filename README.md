@@ -157,22 +157,35 @@ u USER
 g GROUP
 a OTHERS
 
- USER GROUP OTHERS
-l rwx  rwx   rwx
+  USER GROUP OTHERS
+l rwx   rwx   rwx
 
 getfacl zeug zeigt mir alle Rechte einer Datei
 andere option ls -l
 
 umask ändert die rechte um einen wert standard 777 (innerhalb des verzeichnisses) umask 0|022 Verzeichnis Rechte 755 - Datei Rechte wenn ungerade Execute rechte abziehen also -1 wenn nicht bleibt gleich 644 Ergebniss
 
+## SONDER RECHTE
 U s steht für SUID Set User ID Bit
 
 G s steht für SGID Set Group ID Bit
 
 O t steht für Sticky Bit Verz mit allen rechten aber ursprüngliche Rechte bleiben "kleben"
 
+Sonderrechte können nur für Programme gesetzt werden!!!
+
 
 
 Hardlink In ./Ort/HARDLINK /Ort/HARDZIEL
 Softlink In -s ./Ort .Ziel/
+
+
+
+Hardlink counter Dateien 1 / Verzeichenisse 2 (alles wegen Ebenen)
+
+
+
+# DAY5
+
+
 
