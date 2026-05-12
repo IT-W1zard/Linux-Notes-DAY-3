@@ -308,3 +308,4 @@ Verzeichnis: mit Dateien und Unterverzeichnissen, tar is immer explizit rekursiv
 
 
 
+dnf (Projektmanager) stellt repositorys bzw programme in den repositorys zur verfügung
