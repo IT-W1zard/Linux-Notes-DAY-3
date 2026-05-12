@@ -253,7 +253,8 @@ fg %JOBID fg=foreground
 
 sleep 100 & [versetzt einen prozess für 100sekunden in den schlafmodus] [& versetzt prozesse in den Hintergrund]
 
-
+tty = strg alt F2 [öffnet eine konsole die mit sowohl dem root als auch dem User bedient werden kann falls z.B. die Konsole
+auf dem Hauptrechner nicht mehr funktioniert]
 
 # DAY6
 
