@@ -261,3 +261,44 @@ auf dem Hauptrechner nicht mehr funktioniert]
 top -bin 5 > DATEINAME [für den top befehl start ohne visuelle oberfläche wegen -b i sagt du nimmst nur die aktiven prozesse und n sagt du nimmst 5 Snapshots auf in der datei DATEINAME]
 
 
+
+tar steht in jeder unix implementierung zur verfügung
+-c (create) 
+-x (extract) 
+-t (table of contents) inhaltsverzeichniss anzeigen
+-v (verbose, "geschwätzig") Mittelsamkeit Ausgabe wie mit -l
+-f (file) Angabe des Dateinamens des Archives
+-r um neue Dateien hinzuzufügen oder anzuhängen
+--delete -f Archivdatei Verzeichniss-Dateien
+
+Für GNU-Tar können Kompressionsprogramme angegeben werden
+gzip, bzip2, xz
+-z, -j, -J
+.gz, .bz2, .xz
+
+Tar-Archiv mit gzip Komprimierung
+tar -czf archiv.tar.gz Verzeichnis
+tar -c Verzeichnis | gzip > archiv.tar.gz
+Beide machen das gleiche
+
+Entpacken von Tar.Archiv
+tar -xzf archiv.tar.gz
+
+Effiziensparameter -1 bs -9; default -6 bei gzip u. xz, default -9 bei bzip2
+gzip kompressionsgeschwindigkeit vs kompressionsstärke
+bzip2 speicherplatz vs kompressionsstärke
+xz virtueller speicher wird zum komprimieren benötigt, entsprechend kann das kompressionsergebnis
+unterschiedlich aussehen, Genaue Tabellen xz (1)
+gzip datei datei wird durch datei.gz ersetzt
+gzip -c datei > datei.gz Originaldatei bleibt erhalten
+gzip -9 -c datei > datei.gz mit -9 stärke Komprimierung, langsamste Komprimierungsgeschwindigkeit
+
+Option -r rekursiv: alle Dateien in Unterverzeichnisen werden ebenfalls (de-)komprimiert, gzip u. xz
+bzip2 kennt keine Rekursivität
+
+gzip -dc = zcat gzip -d = gunzip analog für xz, unxz und xzcat
+
+
+
+Dateinamen: Datei wird ins Archiv getan, ausgepackt usw.
+Verzeichnis: mit Dateien und Unterverzeichnissen, tar is immer explizit rekursiv
