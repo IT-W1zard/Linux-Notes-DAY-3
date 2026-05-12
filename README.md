@@ -219,6 +219,10 @@ ps -ef
 
 
 
+Runable, Sleeping, Zombie, Waiting, Finished =Prozessstatus
+Idle minimale Ressourcen verbrauch basically Standby
+
+
 kill -SIGNAL pid (pid= Process ID)
 killall prozessname
 kill -l Listet ale Signale mit Name u. Zahl default SIGTERM(15)
@@ -231,13 +235,28 @@ Nice-Werte: -20 bs 19, default gesetzt: 0
 
 renice zahl pid    greift auf laufende Prozess zu und verändert den Wert über Prozess-ID
 
+sudo renice -5 PROZESS ID [nur bei laufenden prozessen]
+
 
 
 pstree -p Praktisch Tree + alle verzweigungen
 
 
-sudo renice -5 PROZESS ID
 
 innerhalb des top befehls
-strg + z SigStopp
+strg + z SigStopp [packt den prozess in den Hintergrundmodus]
 strg + c Siginterrupt
+
+jobs [um die Job ID zu finden]
+
+fg %JOBID fg=foreground
+
+sleep 100 & [versetzt einen prozess für 100sekunden in den schlafmodus] [& versetzt prozesse in den Hintergrund]
+
+
+
+# DAY6
+
+
+
+
