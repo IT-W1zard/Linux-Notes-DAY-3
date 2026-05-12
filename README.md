@@ -231,7 +231,7 @@ kill -l Listet ale Signale mit Name u. Zahl default SIGTERM(15)
 
 nice -n cmd macht Befehle freundlicher, höhere Nice-Wert geringe Priorität, negative Werte nur als root
 möglich; Setzt default +10 wenn keine Zahl hinter dem Kommando eingeben wurde
-Nice-Werte: -20 bs 19, default gesetzt: 0
+Nice-Werte: -20 bs +19, default gesetzt: 0
 
 renice zahl pid    greift auf laufende Prozess zu und verändert den Wert über Prozess-ID
 
@@ -257,6 +257,6 @@ sleep 100 & [versetzt einen prozess für 100sekunden in den schlafmodus] [& vers
 
 # DAY6
 
-
+top -bin 5 > DATEINAME [für den top befehl start ohne visuelle oberfläche wegen -b i sagt du nimmst nur die aktiven prozesse und n sagt du nimmst 5 Snapshots auf in der datei DATEINAME]
 
 
