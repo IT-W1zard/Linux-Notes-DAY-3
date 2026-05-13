@@ -260,24 +260,26 @@ auf dem Hauptrechner nicht mehr funktioniert]
 
 top -bin 5 > DATEINAME [für den top befehl start ohne visuelle oberfläche wegen -b i sagt du nimmst nur die aktiven prozesse und n sagt du nimmst 5 Snapshots auf in der datei DATEINAME]
 
-
-tar -befehl z.B c dann optionen dann Archivdatei und dann was du aktivieren willst
+tar -befehl z.B. c dann optionen dann Archivdatei und dann was du aktivieren willst
 tar steht in jeder unix implementierung zur verfügung
 BEISPIEL: tar --delete -f archiv.tar ./Kontinente/Italien
--c (create) 
--x (extract) 
--t (table of contents) inhaltsverzeichniss anzeigen
--v (verbose, "geschwätzig") Mittelsamkeit Ausgabe wie mit -l
--f (file) Angabe des Dateinamens des Archives
--r um neue Dateien hinzuzufügen oder anzuhängen
---delete -f Archivdatei Verzeichniss-Dateien
+Betriebsmods:
+-c (create)  
+-x (extract)  
+-t (table of contents) inhaltsverzeichniss anzeigen  
+-r um neue Dateien hinzuzufügen oder anzuhängen  
+Optionen:
+-v (verbose, "geschwätzig") Mittelsamkeit Ausgabe wie mit -l  
+-f (file) Angabe des Dateinamens des Archives  
+-r um neue Dateien hinzuzufügen oder anzuhängen  
+--delete -f Archivdatei Verzeichniss-Dateien  
 
 ./ am ende legt eine Datei an
 
 Für GNU-Tar können Kompressionsprogramme angegeben werden
-gzip, bzip2, xz
--z, -j, -J
-.gz, .bz2, .xz
+gzip, bzip2, xz  <--- programme 
+ -z,   -j,   -J  <--- Optionen
+ .gz, .bz2,  .xz <--- Endungen
 
 Tar-Archiv mit gzip Komprimierung
 tar -czf archiv.tar.gz Verzeichnis
