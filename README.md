@@ -371,3 +371,17 @@ done < $1
 "--$LINE--" <--- geht jede LINE/textzeile durch und kopiert sie mit -- am anfang aund -- am ende 
 >>          <--- anhängend
 <           <--- done < $1 standard ausgabe
+
+## Beispiel:
+                
+#! /usr/bin/env bash
+
+i=0
+while (( i < 10 ))
+do
+  	i=$(( i + 1 ))
+        if [ $i -eq 5 ]; then
+                continue # die 5 wird nicht ausgegeben
+        fi
+	echo "zahl: $i"
+done 
