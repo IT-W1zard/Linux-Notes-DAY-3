@@ -311,3 +311,41 @@ Verzeichnis: mit Dateien und Unterverzeichnissen, tar is immer explizit rekursiv
 
 
 dnf (Projektmanager) stellt repositorys bzw programme in den repositorys zur verfügung
+
+
+
+# DAY7
+
+ ## Skripte
+
+ Befehle:
+ echo " " gibt aus was in den Klammern steht
+ $#       gibt die anzahl aller eingegebenen Parameter aus
+ $@       gibt alle eingegebenen Parameter aus
+ $*       gibt alle eingegebenen Parameter als ein einzigen String aus
+
+#! /usr/bin/env bash
+
+Die . gehören nicht dazu
+
+.# Alternative /bin/bash, allerdings im Wurzelverzeichnis
+.# /Usr/bin/env bash ist portabel, Ausführen von Skripten an andere Ortenm z.B. cronjobs (Zeitgesteuerte Kommandosausführen)
+
+.# Testen der Anzahl der Übergabeparamteter
+.#Vergleichsoperatoren -lt less than, > < sind nicht mögich da I/O Operationen
+.# -eq equal(gleich) entspircht ==
+.# -ne not equal(ungleich) entspricht !=
+.# -gt greater than(größer als) entspricht >
+.# -ge greater equal(größer oder gleich) entspricht >=
+.# -lt less than(kleiner als) enspricht <
+.# -le less equal(kleiner oder gleich) entspricht <=
+
+if [ $# -lt 2 ]; then 
+        echo "Fehler du musst mindestens zwei Parameter angeben!"
+        exit 1
+fi
+
+.# Hier ist alles ok
+
+echo "Genug Parameter eingeben"
+exit 0 # Optional: Erfolgreiche Ausführung, Rückgabestatuswert 0, das macht aber schon das echo
