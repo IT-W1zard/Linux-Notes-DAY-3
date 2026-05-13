@@ -340,6 +340,8 @@ Die . gehören nicht dazu
 .# -lt less than(kleiner als) enspricht <
 .# -le less equal(kleiner oder gleich) entspricht <=
 
+## Beispiel:
+
 if [ $# -lt 2 ]; then 
         echo "Fehler du musst mindestens zwei Parameter angeben!"
         exit 1
@@ -349,3 +351,23 @@ fi
 
 echo "Genug Parameter eingeben"
 exit 0 # Optional: Erfolgreiche Ausführung, Rückgabestatuswert 0, das macht aber schon das echo
+
+## Beispiel:
+
+for i in {1..5}
+do
+       echo $i
+done
+
+## Beispiel:
+
+! /usr/bin/env bash
+
+while read LINE
+do
+  	echo "--$LINE--" >> datLesen$(date +%m%d-%H%M).txt
+done < $1
+
+"--$LINE--" <--- geht jede LINE/textzeile durch und kopiert sie mit -- am anfang aund -- am ende 
+>>          <--- anhängend
+<           <--- done < $1 standard ausgabe
