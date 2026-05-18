@@ -435,9 +435,6 @@ Beispiel:
 
 ## Regex
 
-
-
-
 \(...\) definiert eine ,regex`-oder Zeichenketten-Bereich (maxmimal 9 Bereiche auch verschacchtelt)
 
 Selektieren von Text
@@ -454,3 +451,51 @@ Multiplikatoren das davor stehtende Zeichen oder der davor stehenden reguläre A
 \{n,m\} muss mindestens n-mal, maximal m-mal vorkommen
 \{n\} muss genau n-mal vorkommen
 \{n,\} muss mindestens n-mal vorkommen
+
+ifconfig zeigt ein protokoll über die pakete die man empfangen und gesendet hat + fehler.
+nmcli    zeigt DNS information + loopback info.
+passwd	 enthält Benutzerkonten des Systems.
+services enthält die Zuordnung von: Dienstnamen, Portnummern, Protokollen.
+ip link zeigt die Netzwerk-Schnittstellen (Interfaces) deines Systems.
+
+## grep:
+
+grep = generischer Textsucher
+er sucht Zeilenweise in Texten
+das „pattern“ bestimmst du selbst
+
+👉 Ohne Muster weiß grep nichts von IP-Adressen, IPv4 oder irgendwas Netzwerk-spezifischem.
+
+🧠 Unterschied zu normalem grep
+❌ normales grep (Basic Regex)
+Viele Sonderzeichen müssen escaped werden:
+
+Beispiel:
+grep '\(abc\)\{2\}'
+
+✅ grep -E (Extended Regex)
+viel einfacher zu schreiben:
+
+Beispiel:
+grep -E '(abc){2}'
+
+
+
+## awk
+erkennt automatisch mehrere Leerzeichen
+ist für Spalten gedacht
+stabiler als cut
+
+
+
+Weil die UID nie:
+am Anfang der Zeile
+oder am Ende steht.
+Sie ist immer mitten drin.
+zwischen zwei : :
+
+
+
+✅ POSIX-Charclass:
+[[:space:]]
+→ „ein beliebiges Leerzeichen“
