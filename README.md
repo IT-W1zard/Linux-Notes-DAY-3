@@ -370,7 +370,7 @@ done < $1
 
 "--$LINE--" <--- geht jede LINE/textzeile durch und kopiert sie mit -- am anfang aund -- am ende 
 >>          <--- anhängend
-<           <--- done < $1 standard ausgabe
+<           <--- done < $1 das erste angegebene argument z.B. Pfad
 
 ## Beispiel:
                 
@@ -385,3 +385,72 @@ do
         fi
 	echo "zahl: $i"
 done 
+
+
+
+
+(( i=1; i<6; i++ )) Das ist arithmetischer Modus. Bash behandelt den Inhalt wie Mathematik bzw. C-ähnliche Ausdrücke.
+
+Typisch für:
+Rechnen
+Vergleiche mit Zahlen
+Inkrementieren (i++)
+Schleifenbedingungen
+
+
+
+[ "$name" = "Max" ] Die eckigen Klammern sind eigentlich ein Kommando namens test.
+
+Das wird benutzt für:
+Stringvergleiche
+Dateitests
+einfache numerische Vergleiche
+
+Leerzeichen sind Pflicht:
+
+
+
+
+Geschweifte Klammern gruppieren Befehle.
+{
+    echo "Hallo"
+    echo "Welt"
+}
+
+mehrere Befehle zusammenfassen
+Umleitungen auf mehrere Befehle anwenden
+
+Beispiel:
+| Syntax  | Bedeutung               | Typischer Einsatz              |
+| ------- | ----------------------- | ------------------------------ |
+| `(( ))` | Mathematik / Arithmetik | `i++`, `x+1`, Zahlenvergleiche |
+| `[ ]`   | Bedingungen/Test        | `if`, Datei prüfen, Strings    |
+| `{ }`   | Befehlsblock            | mehrere Befehle gruppieren     |
+
+
+
+
+
+# DAY 8
+
+## Regex
+
+
+
+
+\(...\) definiert eine ,regex`-oder Zeichenketten-Bereich (maxmimal 9 Bereiche auch verschacchtelt)
+
+Selektieren von Text
+.	Steht für eine beliebiges Zeichen
+^,$ ^Zeilenanfang, $Zeilenende
+\<, \> < Wortanfang, > Wortende
+[....] ein Zeichen aus der angegebenen Zeichenmenge
+[^...] ein Zeichen aus der nicht angegebenen Zeichenmenge
+
+Multiplikatoren das davor stehtende Zeichen oder der davor stehenden reguläre Ausdruck
+* darf beliebig oft vorkommen auch 0-mal
+\+ darf beliebig oft vorkommen mindestens 1-mal
+? darf 0- oder 1-mal vorkommen
+\{n,m\} muss mindestens n-mal, maximal m-mal vorkommen
+\{n\} muss genau n-mal vorkommen
+\{n,\} muss mindestens n-mal vorkommen
