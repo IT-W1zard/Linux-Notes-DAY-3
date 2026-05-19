@@ -446,11 +446,11 @@ Selektieren von Text
 
 Multiplikatoren das davor stehtende Zeichen oder der davor stehenden reguläre Ausdruck
 * darf beliebig oft vorkommen auch 0-mal
-\+ darf beliebig oft vorkommen mindestens 1-mal
++ darf beliebig oft vorkommen mindestens 1-mal
 ? darf 0- oder 1-mal vorkommen
-\{n,m\} muss mindestens n-mal, maximal m-mal vorkommen
-\{n\} muss genau n-mal vorkommen
-\{n,\} muss mindestens n-mal vorkommen
+{n,m} muss mindestens n-mal, maximal m-mal vorkommen
+{n} muss genau n-mal vorkommen
+{n,} muss mindestens n-mal vorkommen
 
 ifconfig zeigt ein protokoll über die pakete die man empfangen und gesendet hat + fehler.
 nmcli    zeigt DNS information + loopback info.
@@ -459,6 +459,8 @@ services enthält die Zuordnung von: Dienstnamen, Portnummern, Protokollen.
 ip link zeigt die Netzwerk-Schnittstellen (Interfaces) deines Systems.
 
 ## grep:
+
+\ muss angegeben werden als entwertungszeichen wenn man z.B. \{n\} benutzt
 
 grep = generischer Textsucher
 er sucht Zeilenweise in Texten
@@ -499,3 +501,6 @@ zwischen zwei : :
 ✅ POSIX-Charclass:
 [[:space:]]
 → „ein beliebiges Leerzeichen“
+
+# DAY9
+
