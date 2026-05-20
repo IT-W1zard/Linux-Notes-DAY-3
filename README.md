@@ -503,4 +503,20 @@ zwischen zwei : :
 → „ein beliebiges Leerzeichen“
 
 # DAY9
+Wiederholungen
+und mehr Regex aus den Übungen 1-9
+
+# DAY9
+
+Vim einführung und dessen Befehle
+Befehle:
+-
+-
+-
+-
+-
+-
+-
+-
+-
 
