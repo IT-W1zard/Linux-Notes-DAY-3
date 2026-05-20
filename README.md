@@ -506,17 +506,61 @@ zwischen zwei : :
 Wiederholungen
 und mehr Regex aus den Übungen 1-9
 
-# DAY9
+# DAY10
 
 Vim einführung und dessen Befehle
 Befehle:
--
--
--
--
--
--
--
--
--
 
+## Löschen & Rückgängig machen
+-dd um eine Zeile zu löschen
+-x um ein Zeichen zu löschen
+-ce um den rest eines wortes nach dem Cursor zu löschen
+-dw um ein Wort zu löschen
+-d$ um bis zum Ende der Zeile zu löschen
+-u um eine eingabe rückgängig zu machen
+-strg r um das undo (u) rückgängig zu machen
+
+## Eingabe öffnen
+-i um die Text eingabe am Cursor zu Starten
+-I um die Text eingabe am Zeilen Anfang zu starten
+-a um die Text eingabe ein Zeichen weiter zu starten
+-A um die Text eingabe am Ende der Zeile zu starten
+
+## Speichern & Verlassen
+-w zum speichern
+-q zum verlassen
+-wq zum speichern und verlassen
+
+## Bewegen
+-d bewegen w bis zum nächsten wort e zum Ende des Aktuellen Wortes $ zum Ende der Zeile MIT dem letzten Zeichen 
+-2w um den Cursor zwei wörter vorwärts zu bewegen
+-3e um dne Cursor zum Ende des dritten Wortes zu bewegen
+-0 um zum Anfang der Zeile zu gelangen
+-G um sich zum Ender der Datei zu begeben
+-gg um sich zum Anfang der Datei zu begeben
+
+## Kopieren/Markieren & Ersetzen
+-p um etwas das mit dd z.B. gelöscht oder mit v markiert wurde wo anders hin zu kopieren
+-r um ein Zeichen zu ersetzen
+-R um mehrere Zeichen zu ersetzen
+-:s/AltesWort/NeuesWort/g um ein Altes Wort durch ein neues Wort in einer Zeile zu ersetzen 
+	!!Ersetzt alle vorkommen vom Alten Wort in der Zeile!!
+-v um einen Text zu Markieren
+-:w TEST um die aktuelle Datei zu testen
+
+## Suchen
+-/Wort um nach "Wort" zu suchen
+	Tippe n um nach der nächsten vorkommen des "Wort" zu gehen Tippe N um zum vorherigen vorkommen des "Wort" zu gehen
+-% um die gegenüberliegende Klammer zu finden { (  [ ] ) }
+
+## Zeilen Einfügen
+-o um eine Zeile unterhalb einzufügen
+-O um eine Zeile oberhalb einzufügen
+
+## Ignore/Hilfe
+-set ic ignoriert groß und kleinschreibung bei der suche
+-set hls is highlights die gesuchte Zeichenkette
+-F1/Hilfetaste oder :Help um eine Fenster zu öffnen für den jeweiligen Befehl
+
+# Ausführen eines Externen Kommandos
+-:! Kommando um ein Externes Kommando auszuführen
