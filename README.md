@@ -564,3 +564,22 @@ Befehle:
 
 # Ausführen eines Externen Kommandos
 -:! Kommando um ein Externes Kommando auszuführen
+
+
+
+# DAY12
+
+systemctl status DIENST zeigt den Status eines Dienstes ob er an aus ist und restliche Infos
+
+jeder User hat seine eigen crontab und kann diese temporär in der Shell öffnen
+
+in der crontab immer absolute Pfade angeben!
+
+## crontab
+
+ * Min(0-59) * Stunden(0-23) * Tag(1-31) * Monat(1-12) * Wochentag(0-7)
+
+ 45 9 * * * echo "In 5 Minuten ist Pause" > /dev/pts/0
+
+cron erkennt das die * für werte stehen wie Minuten Stunden Tage usw
+
