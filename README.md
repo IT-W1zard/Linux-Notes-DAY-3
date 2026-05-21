@@ -565,9 +565,11 @@ Befehle:
 # Ausführen eines Externen Kommandos
 -:! Kommando um ein Externes Kommando auszuführen
 
-
-
 # DAY11
+Vimtutor
+Vim-Editor
+
+# DAY12
 
 systemctl status DIENST zeigt den Status eines Dienstes ob er an aus ist und restliche Infos
 
