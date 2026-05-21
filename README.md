@@ -583,3 +583,59 @@ in der crontab immer absolute Pfade angeben!
 
 cron erkennt das die * für werte stehen wie Minuten Stunden Tage usw
 
+
+## comm
+
+~/.bash_history weil einfach history in crontab nicht funktioniert
+
+comm vergleicht zwei sortierte Dateien/Streams Zeile für Zeile.
+
+comm [OPTIONEN] datei1 datei2
+
+Beispiel:
+comm -13 <(sort Daily-History) <(sort ~/.bash_history)
+
+Bedeutung von -13
+
+Die Zahlen stehen für die 3 Spalten.
+
+-1 → verstecke Spalte 1
+-2 → verstecke Spalte 2
+-3 → verstecke Spalte 3
+
+Also bedeutet -13
+verstecke:
+alles nur aus Datei1
+alles was in beiden vorkommt
+
+➡️ übrig bleibt nur Spalte 2
+
+AKA:
+
+Zeilen die nur in ~/.bash_history vorkommen
+also neue Befehle.
+
+## Was sind <(...) temporäre Streams?
+
+Das nennt sich:
+
+Process Substitution
+<(COMMAND)
+
+Bash tut so, als wäre die Ausgabe eines Befehls eine Datei.
+
+## Warum braucht man /bin/bash -c oft bei cron?
+
+Cron führt Befehle nicht immer mit Bash aus.
+
+Oft benutzt cron:
+
+/bin/sh
+
+Aber Features wie:
+
+<(...)
+Arrays
+bestimmte Bash-Syntax
+
+funktionieren nur in Bash.
