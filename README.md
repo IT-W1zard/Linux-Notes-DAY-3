@@ -567,7 +567,7 @@ Befehle:
 
 
 
-# DAY12
+# DAY11
 
 systemctl status DIENST zeigt den Status eines Dienstes ob er an aus ist und restliche Infos
 
