@@ -639,3 +639,38 @@ Arrays
 bestimmte Bash-Syntax
 
 funktionieren nur in Bash.
+
+-i
+startet Bash interaktiv
+
+## History DAY12
+
+| Thema                                    | Erklärung                                    | Beispiel                              |
+| ---------------------------------------- | -------------------------------------------- | ------------------------------------- |
+| `history`                                | Zeigt RAM-History der aktuellen Shell        | `history`                             |
+| `~/.bash_history`                        | Gespeicherte History-Datei auf Disk          | `cat ~/.bash_history`                 |
+| Unterschied `history` vs `.bash_history` | `history` enthält oft neuere Befehle         | neue Commands erst später gespeichert |
+| `history -a`                             | Schreibt neue RAM-History in `.bash_history` | `history -a`                          |
+| Cron Syntax                              | Zeitpunkt für automatische Jobs              | `50 15 * * *`                         |
+| `/bin/bash -c`                           | Führt String als Bash-Code aus               | `/bin/bash -c 'echo hi'`              |
+| `-i`                                     | Startet Bash interaktiv                      | `/bin/bash -i`                        |
+| `sort`                                   | Sortiert Zeilen alphabetisch                 | `sort file.txt`                       |
+| `comm`                                   | Vergleicht 2 sortierte Inputs                | `comm A B`                            |
+| `comm -13`                               | Zeigt nur Zeilen aus Datei2                  | neue Commands finden                  |
+| Process Substitution                     | Befehlsausgabe wie Datei nutzen              | `<(sort file)`                        |
+| `-` bei `comm`                           | stdin als Datei verwenden                    | `comm A -`                            |
+| `sed`                                    | Text verändern/filtern                       | `sed "s/^ *[0-9]\+ *//"`              |
+| Entfernen von History-Nummern            | Löscht führende Zahlen aus `history`         | `history \| sed ...`                  |
+| `&&`                                     | Zweiten Befehl nur bei Erfolg ausführen      | `A && B`                              |
+| `;`                                      | Befehle nacheinander ausführen               | `A ; B`                               |
+| `( ... )`                                | Gruppiert Befehle/Subshell                   | `(echo hi; date)`                     |
+| `>>`                                     | An Datei anhängen                            | `echo hi >> file`                     |
+| `>`                                      | Datei überschreiben                          | `echo hi > file`                      |
+| `date`                                   | Datum/Uhrzeit ausgeben                       | `date "+%Y-%m-%d"`                    |
+| `\%` in cron                             | `%` muss escaped werden                      | `+\%Y-\%m-\%d`                        |
+| stdin                                    | Eingabe aus Pipe                             | `command -`                           |
+| Pipe `\|`                                | Ausgabe an nächsten Befehl senden            | `cat a \| sort`                       |
+| Warum cron-Probleme hatte                | cron hat keine interaktive Shell-History     | `history` oft leer                    |
+| Finale Lösung                            | Nur neue Commands speichern + Zeitstempel    | dein funktionierender Cronjob         |
+
+# DAY13
