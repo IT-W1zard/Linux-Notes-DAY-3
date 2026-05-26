@@ -675,4 +675,7 @@ startet Bash interaktiv
 | Warum cron-Probleme hatte                | cron hat keine interaktive Shell-History     | `history` oft leer                    |
 | Finale Lösung                            | Nur neue Commands speichern + Zeitstempel    | dein funktionierender Cronjob         |
 
+/etc/skel
+
 # DAY13
+
