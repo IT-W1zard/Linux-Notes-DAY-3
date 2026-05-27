@@ -679,3 +679,29 @@ startet Bash interaktiv
 
 # DAY13
 
+- -z $line: -z überprüft ob etwas leer ist und springt weiter also hier überprüft er die nächste line
+-[[ ]] prüft ob etwas wahr oder falsch ist
+-p in der Commandline sagt gib keine Fehler Meldung aus
+-sudo usermod -aG wheel USER: Setzt die Gruppe des benutzers
+-id USER: Zeigt in welcher gruppe der User sich befindet
+-USERadd-m: Legt user mit home-verzeichnis an
+-passwd -S USER: Statusinformatinen für User passwort
+    1.Username: LK locked, NP no password, PS passwort vorhanden
+    2.PW-Status: Passwort-Status eines Users
+    3.Letzte Änderung:
+    4.Min days: Tage wann wieder eine Passwort änderung möglich ist
+    5.Max days: Tage wie lange eine Passwort änderung gültig ist
+    6.Warning: Days Anzahl der Tage vor Ablauf des passworts gewarnt wird default+:7 
+    7.Inactive: Days Tage zu änderung des Passworts, danach ist Konto gesperrt
+-getent shadow USER: zeigt die Gehashten passwörter eines oder aller user aus der /etc/shadow
+-sudo getent passwd USER: zeigt die Gehashten passwörter eines oder aller user aus der /etc/passwd
+-sudo userdel -r USER: Löscht einen Benutzer vom System
+-sudo chage -l USER: zeigt das gleiche wie passwd -S USER
+-sudo chage --mindays ZAHL --maxdays ZAHL: ändert die Werte der angegeben Status einheiten
+
+
+# DAY 14 - Fortführung des Benutzerverwaltung Projektes
+
+# DAY 15
+
+
