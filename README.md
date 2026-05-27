@@ -1,3 +1,67 @@
+# Linux-Notes DAY 2  
+cd /etc  
+[ONMO@localhost etc]$ ls /etc/profile /etc/bashrc  
+/etc/bashrc  /etc/profile  
+[ONMO@localhost etc]$ ls -al /etc/profile /etc/bashrc  
+-rw-r--r--. 1 root root 2658  7. Apr 2024  /etc/bashrc  
+-rw-r--r--. 1 root root 1899  7. Apr 2024  /etc/profile  
+cat /etc/bashrc Ruft die Globale Bash Konfigurationsdatei  
+Zeigt die Zugriffsberechtigungen den besiter die größe den Zeitstepel und den Standort der Globale Konfigurations Dateien  
+gelten für alle User  
+
+alias NAME='BEFEHL' Gibt einen Temporären Shortcut als Name für einen Befehl an  
+Sudo („superuser do“) erlaubt es dir, einen Befehl mit den Rechten eines anderen Benutzers – meist des Administrators (root) –  auszuführen  
+
+unalias NAME  
+
+source .bashrc akuallisiert die Bashrc  
+
+nano .bashrc bearbeitet die bashrc  
+"Erlaubt dauerhafte alias zu machen aktualisieren nicht vergssen nach dem verlassen der Bashrc"  
+
+WERT1=WERT2  
+echo $WERT1  
+Ausgabe WERT2  
+
+printenv/env umgebungsvariable zeigt die komplette Umgebung=Session oder auch die Aktuelle Sitzung nach start des PCs  
+printenv HOME  
+printenv SHELL  
+printenv USER  
+printenv PATH pfad zum benutzerverzeichniss/user spezifische umgebungsvariablen  
+
+| head zeigt die ersten 10 zeile an (modifizierbar -20 -30 usw  
+| tail zeigt die letzten 10 zeile an (modifizierbar -20 -30 usw  
+| BEFEHL | BEFEHL Pipes "|" führen immer einen Befehl nach dem anderen aus  
+
+stdout 1  
+BEFEHL > NAME erstellt eine Datei und erneute eingabe überschreibt die Datei mit eingegebenem Text  
+BEFEHL >> NAME erstellt eine Datei und erneute eingabe fügt Text hinzu  
+
+BEFEHL 2> NAME erstellt eine Datei und erneute eingabe überschreibt die Datei mit der Fehlerangabe z.B. Syntax Error  
+BEFEHL 2>> NAME erstellt eine Datei und erneute eingabe fügt die Fehlerangabe z.B. Syntax Error hinzu  
+
+BEISPIEl  
+find 2> /(<--- root) t  /dev/null (<--- um die Fehler rauszuwerfen ergebniss)  
+  
+findet alles mit t im root verzeichnis und schmeißt die error/fehler also z.B. datein auf die wir keinen zugriff haben raus  
+
+<_datin  
+<< text  
+
+FIFO Pipe: First In - First Out  
+
+stdin 0  am anfang eines befehls gibt es weiter an dne stdout an nach der pipe am ende des befehls
+stdout 1  
+stderr 2  
+
+xargs nl, expand, unexpand, uniq  
+
+find name perm dataError  
+
+find /             / gibt hier den startpunkt an  
+
+-perm um nach rechten(permissions) zu suchen
+
 # Linux-Notes-DAY-3
 filter programme die nach der pipe eingesetzt werden können  
 cat, passwd, bash, head, tail, wc, less, more, ssh, cut, tac  
