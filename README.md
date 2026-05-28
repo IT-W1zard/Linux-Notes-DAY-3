@@ -788,3 +788,8 @@ sudo cat /etc/cpuinfo: zeigt detaillierte Informationen zur CPU an (Modell, Kern
 lscpu: zeigt CPU-Informationen in kompakter und übersichtlicher Form an; nutzt ebenfalls Daten aus /etc/cpuinfo
 nmtui: textbasierte Benutzeroberfläche zur Verwaltung von Netzwerkverbindungen über den NetworkManager
 nmcli: Kommandozeilenwerkzeug des NetworkManager zum Verwalten von Netzwerkverbindungen, Geräten und Einstellungen
+
+nmcli connection modfiy [router] ipv4.gateway [IP]
+		down schaltet angegebene verbindung aus
+		ip schaltet angegebene verbindung ein
+		ipv4.method manual
