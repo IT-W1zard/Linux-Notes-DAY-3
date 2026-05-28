@@ -744,8 +744,8 @@ startet Bash interaktiv
 # DAY13
 
 - -z $line: -z überprüft ob etwas leer ist und springt weiter also hier überprüft er die nächste line
--[[ ]] prüft ob etwas wahr oder falsch ist
--p in der Commandline sagt gib keine Fehler Meldung aus
+-[[ ]]: prüft ob etwas wahr oder falsch ist
+-p: in der Commandline sagt gib keine Fehler Meldung aus
 -sudo usermod -aG wheel USER: Setzt die Gruppe des benutzers
 -id USER: Zeigt in welcher gruppe der User sich befindet
 -USERadd-m: Legt user mit home-verzeichnis an
@@ -765,7 +765,26 @@ startet Bash interaktiv
 
 
 # DAY 14 - Fortführung des Benutzerverwaltung Projektes
+-
+-
+-
 
 # DAY 15
+## VM-Installation mehrere VMs
+-
+-
+-
+-
 
+# DAY 16
 
+## Networking
+
+ip a: zeigt alle Netzwerkinterfaces und deren IP-Adressen an
+ip r: zeigt die Routing-Tabelle des Systems an
+sudo sysctl -w net.ipv4.ip_forward=1: aktiviert IPv4-Forwarding temporär bis zum nächsten Neustart
+sudo cat /etc/resolv.conf: zeigt die aktuell verwendeten DNS-Server und Resolver-Einstellungen an
+sudo cat /etc/cpuinfo: zeigt detaillierte Informationen zur CPU an (Modell, Kerne, Taktfrequenz usw.)
+lscpu: zeigt CPU-Informationen in kompakter und übersichtlicher Form an; nutzt ebenfalls Daten aus /etc/cpuinfo
+nmtui: textbasierte Benutzeroberfläche zur Verwaltung von Netzwerkverbindungen über den NetworkManager
+nmcli: Kommandozeilenwerkzeug des NetworkManager zum Verwalten von Netzwerkverbindungen, Geräten und Einstellungen
