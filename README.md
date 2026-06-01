@@ -768,6 +768,7 @@ startet Bash interaktiv
 -
 -
 -
+-
 
 # DAY 15
 ## VM-Installation mehrere VMs
@@ -780,16 +781,106 @@ startet Bash interaktiv
 
 ## Networking
 
-ip a: zeigt alle Netzwerkinterfaces und deren IP-Adressen an
-ip r: zeigt die Routing-Tabelle des Systems an
-sudo sysctl -w net.ipv4.ip_forward=1: aktiviert IPv4-Forwarding temporär bis zum nächsten Neustart
-sudo cat /etc/resolv.conf: zeigt die aktuell verwendeten DNS-Server und Resolver-Einstellungen an
-sudo cat /etc/cpuinfo: zeigt detaillierte Informationen zur CPU an (Modell, Kerne, Taktfrequenz usw.)
-lscpu: zeigt CPU-Informationen in kompakter und übersichtlicher Form an; nutzt ebenfalls Daten aus /etc/cpuinfo
-nmtui: textbasierte Benutzeroberfläche zur Verwaltung von Netzwerkverbindungen über den NetworkManager
-nmcli: Kommandozeilenwerkzeug des NetworkManager zum Verwalten von Netzwerkverbindungen, Geräten und Einstellungen
+-ip a: zeigt alle Netzwerkinterfaces und deren IP-Adressen an
+-ip r: zeigt die Routing-Tabelle des Systems an
+-sudo sysctl -w net.ipv4.ip_forward=1: aktiviert IPv4-Forwarding temporär bis zum nächsten Neustart
+-sudo cat /etc/resolv.conf: zeigt die aktuell verwendeten DNS-Server und Resolver-Einstellungen an
+-sudo cat /etc/cpuinfo: zeigt detaillierte Informationen zur CPU an (Modell, Kerne, Taktfrequenz usw.)
+-lscpu: zeigt CPU-Informationen in kompakter und übersichtlicher Form an; nutzt ebenfalls Daten aus /etc/cpuinfo
+-nmtui: textbasierte Benutzeroberfläche zur Verwaltung von Netzwerkverbindungen über den NetworkManager
+-nmcli: Kommandozeilenwerkzeug des NetworkManager zum Verwalten von Netzwerkverbindungen, Geräten und Einstellungen
+-sysctl:
 
-nmcli connection modfiy [router] ipv4.gateway [IP]
-		down schaltet angegebene verbindung aus
-		ip schaltet angegebene verbindung ein
-		ipv4.method manual
+-nmcli connection modfiy [router] ipv4.gateway [IP]
+		ifdown/down: schaltet angegebene verbindung aus
+		ifup/ip: schaltet angegebene verbindung ein
+		ipv4.method manual: [???]
+
+# DAY 17
+
+## iptables
+
+-Port Forwarding
+Technik, User von außerhalb greitft auf einen Dienst in einem privaten Netzwerk zu, normalerweise von außen nicht erreichbar
+
+-iptables
+Möglichketi einen Diesnt im privaten Netzwerk öffentlich zugänglich zu machen z.B Web Server, Game Server usw.
+- Tool zum Einrichten von Port Forwarding
+- IP-Paketfilerregeln der Linux Kernel Firewall weden konfiguriert
+als verschiedene Netzfilermodule
+- Organisation in verschiedenen Tabellen
+
+-Step1: sudo iptables -L -v -n
+Überprüfen der gesetzten Regeln -L Listet die Regeln, -v verbose stellt mehr infos zur Verfügung, -n listet IP-Adressen u. Portnummern im numerischen Format
+-Step2: sudo nano /etc/sysctl.conf
+Um Weiterleitung auf Kernel Ebene zu erlauben muss IP-Weiterleiung (Forwarding) eingeschaltet werden Diese Zeile muss in der Konfigurationsdatei stehen
+net.ipv4.ip_forward=1
+-Step3: sudo sysctl -p
+-Step4: sudo iptables -t nat -A PREROUTING -p tcp --dport 8080 -j DNAT  --to-destinat IP-Adr:80
+8080 wird duch die Portnummer über die der Netzwerkverkehr läuft, ersetzt durch IP-Adr. ist die Adresse auf die sie den Verkehr weiterleiten wollen 80 die Portnummer des Zielrechners
+-Step5: sudo iptables -t nat -A POSROUTING -J MASQUERADE
+Maskiert die IP-Adresse der ankommenden Pakete mit der IP-Adresse der ausgehenden Netzwerkschnittstellen
+-Step6: sudo apt install iptables-persistent [Ubuntu] sudo services iptables [RHEL, Fedora]
+Speichern der Regeln, dauerhaft in /etc/sysconfig/iptables
+-Step7: Verifizieren der Konfigurationen: verbinden mit dem Quellport von einem anderen Rechner Tools: nc, telnet, curl
+
+- filter
+- nat
+- mangle
+- raw
+- security
+
+93-101 Zeitverwaltung + Chrony 
+
+
+sysctl -w net.ipv4.ip_forward=1 []
+sudo iptables -t nat -A POSTROUTING -o ens160 -j MASQUERADE []
+sudo iptables -t nat -L -v -n []
+
+makestep
+rtcsync
+stratum 1
+stratum 2
+stratum 0
+
+stratum 10
+local stratum
+sudo ss -tulpn | grep chronyd [Zeigt den Socket an?] oder angegegeben diesnt an?]
+sudo cat /etc/services | grep ' 123/udp'
+
+sudo hwclock [zeigt die akutuellen zeit und datums daten des systems]
+sudo date 020318012009.30 [ändert diese daten und gibt nach dem . eine zeigt angabe in sekunden an]
+sudo chronyc [c steht für config hier]
+sudo chronyd [d steht für daemon hier]
+sudo chronyc/d makestep [aktuallisiert die akutellen Zeiteinstellungen]
+cat /etc/chrony.conf | less [zeigt eine auswahl an Zeitservern]
+
+lsblk aktive Blockdevice
+	fdisk -l
+
+lsmod zeigt geladene Module
+
+lscpu gibt informationen zur CPU aus
+	/proc/cpuinfo
+
+lsusb  gibt informationen zu aktiven usb devices
+
+lspci Speed: Device Geschwindigkeit IRQ Number (Interrupt Request) Vendor: Hersteller des Devices [LPIC 3 FRAGEN!!!]
+	lspci -v
+
+lsof list open files, zeigt eine liste Geöffneter Dateiene an TCP/IP Socket Verbindung
+	lsof -i
+df Anzeige Partiotionsbelegung, nur aktive Partitionen
+	/etc/fstab File System Tabelle
+
+mount eigenhändig von Partitionen, File Systemen
+	  -- bind für eigenhängte Geräte
+
+unmount aushängen von Partitionen, File Systemen
+
+/proc/self/mounts aktuell 
+/proc/mounts gemountete FS
+/etc/mtab dito
+
+cat/proc/swaps Auslagerungsspeicher
+swapon/swapoff ein- und auschalten von Swapspace
