@@ -884,3 +884,7 @@ unmount aushängen von Partitionen, File Systemen
 
 cat/proc/swaps Auslagerungsspeicher
 swapon/swapoff ein- und auschalten von Swapspace
+
+# DAY x1
+
+## IT-Security
