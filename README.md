@@ -888,3 +888,44 @@ swapon/swapoff ein- und auschalten von Swapspace
 # DAY x1
 
 ## IT-Security
+
+Ab hier ist nur noch mitgeschrieben wenn möglich oder benötigt
+
+cat ~/.ssh/known_hosts zeigt den öffentlichen schlüssel vom router an
+
+ssh-keygen -t rsa -b ZAHL
+
+## Physical Volumes (PV)
+Aktion	                  Befehl
+Anzeigen (kurz)	          pvs
+Anzeigen (detailliert)	  pvdisplay
+Scannen	                  pvscan
+Erstellen	              pvcreate /dev/sdb
+Entfernen	              pvremove /dev/sdb
+Größe ändern	          pvresize /dev/sdb
+Attribute ändern	      pvchange
+
+## Volume Groups (VG)
+Aktion	                  Befehl
+Anzeigen (kurz)	          vgs
+Anzeigen (detailliert)    vgdisplay
+Scannen	                  vgscan
+Erstellen	              vgcreate vg_data /dev/sdb
+Erweitern	              vgextend vg_data /dev/sdc
+Verkleinern	              vgreduce vg_data /dev/sdc
+Entfernen	              vgremove vg_data
+Aktivieren/Deaktivieren	  vgchange
+Umbenennen	              vgrename
+
+## Logical Volumes (LV)
+Aktion	                  Befehl
+Anzeigen (kurz)	          lvs
+Anzeigen (detailliert)	  lvdisplay
+Scannen	                  lvscan
+Erstellen	              lvcreate
+Entfernen	              lvremove
+Vergrößern	              lvextend
+Verkleinern	              lvreduce
+Größe ändern	          lvresize
+Umbenennen	              lvrename
+Eigenschaften ändern	  lvchange
