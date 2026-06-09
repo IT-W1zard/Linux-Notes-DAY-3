@@ -1078,3 +1078,9 @@ rsync -avh --delete /home/user/ /mnt/backup/
 --delete Ziel exakt spiegeln
 Die Kombination, die man am häufigsten sieht
 rsync -avhP QUELLE ZIEL
+
+# Merksatz für Prüfungen
+
+SSH-Agent: Speichert entsperrte SSH-Schlüssel im RAM, damit die Passphrase nicht ständig neu eingegeben werden muss.
+
+Agent Forwarding: Ermöglicht einem entfernten Server, deinen lokalen SSH-Agenten zu verwenden, ohne dass der private Schlüssel auf den Server kopiert wird.
