@@ -929,3 +929,152 @@ Verkleinern	              lvreduce
 Größe ändern	          lvresize
 Umbenennen	              lvrename
 Eigenschaften ändern	  lvchange
+
+## C Confidentiality/Vertraulichkeit [Verschlüsselung]
+
+### 1. Symmetrische Verschlüsselung
+
+Bei der symmetrischen Verschlüsselung wird derselbe Schlüssel zum Ver- und Entschlüsseln verwendet.
+
+Ablauf:
+Sender und Empfänger besitzen den gleichen geheimen Schlüssel.
+Der Sender verschlüsselt die Nachricht mit diesem Schlüssel.
+Der Empfänger entschlüsselt sie mit demselben Schlüssel.
+
+Vorteile:
+Sehr schnell
+Gut für große Datenmengen geeignet
+
+Nachteile:
+Der Schlüssel muss sicher ausgetauscht werden.
+Wenn der Schlüssel gestohlen wird, kann jeder die Nachrichten lesen.
+
+Beispiele:
+AES
+DES
+ChaCha20
+
+### 2. Asymmetrische Verschlüsselung
+
+Bei der asymmetrischen Verschlüsselung gibt es zwei Schlüssel:
+
+Einen öffentlichen Schlüssel (Public Key), den jeder kennen darf.
+Einen privaten Schlüssel (Private Key), den nur der Besitzer kennt.
+
+Ablauf:
+
+Der Sender verschlüsselt die Nachricht mit dem öffentlichen Schlüssel des Empfängers.
+Nur der private Schlüssel des Empfängers kann die Nachricht entschlüsseln.
+
+Vorteile:
+Kein geheimer Schlüsselaustausch nötig.
+Ermöglicht digitale Signaturen.
+
+Nachteile:
+Deutlich langsamer als symmetrische Verfahren.
+
+Beispiele:
+RSA
+ECC
+ElGamal
+
+### 3. Hybride Verschlüsselung
+
+In der Praxis wird häufig eine Kombination aus symmetrischer und asymmetrischer Verschlüsselung verwendet.
+
+Ablauf:
+Asymmetrische Verschlüsselung wird genutzt, um einen zufällig erzeugten symmetrischen Schlüssel sicher auszutauschen.
+Anschließend werden die eigentlichen Daten mit dem schnellen symmetrischen Verfahren verschlüsselt.
+
+Vorteile:
+Hohe Sicherheit
+Hohe Geschwindigkeit
+
+Beispiele:
+TLS (für HTTPS)
+PGP
+OpenPGP
+
+## I Integrity/Integrität [Hashen]
+
+## A Authenticity/Authentizität [ ]
+
+# RSYNC
+rsync ist ein Werkzeug zum Synchronisieren und Kopieren von Dateien und Verzeichnissen. Es überträgt nur Änderungen, wodurch es sehr effizient ist.
+
+## Grundsyntax
+rsync [OPTIONEN] QUELLE ZIEL
+
+### Beispiel:
+rsync datei.txt /backup/
+
+Häufigste Optionen
+Option	Bedeutung
+-a	Archivmodus (rekursiv, Rechte, Zeitstempel usw. erhalten)
+-v	Ausführliche Ausgabe (verbose)
+-z	Komprimierung während der Übertragung
+-h	Größen menschenlesbar anzeigen
+-r	Rekursiv durch Verzeichnisse
+-P	Fortschritt anzeigen + abgebrochene Transfers fortsetzen
+--progress	Fortschrittsanzeige
+--delete	Löscht Dateien im Ziel, die in der Quelle nicht mehr existieren
+-n	Testlauf (Dry Run), nichts wird tatsächlich kopiert
+-u	Überschreibt keine neueren Dateien im Ziel
+-c	Vergleicht per Prüfsumme statt Datum/Größe
+-e ssh	Übertragung über SSH
+--exclude=PATTERN	Dateien/Ordner ausschließen
+--include=PATTERN	Dateien/Ordner einschließen
+--bwlimit=KBPS	Bandbreite begrenzen
+--partial	Unvollständige Dateien behalten
+--stats	Statistik nach Abschluss anzeigen
+
+## Wichtige Beispiele
+Ordner kopieren
+rsync -av /quelle/ /ziel/
+
+Mit Fortschritt
+rsync -avP /quelle/ /ziel/
+
+Testlauf
+rsync -avn /quelle/ /ziel/
+
+Synchronisieren und löschen
+rsync -av --delete /quelle/ /ziel/
+
+Über SSH auf anderen Server
+rsync -avz -e ssh /daten/ user@server:/backup/
+
+Vom Server herunterladen
+rsync -avz -e ssh user@server:/daten/ /lokal/
+
+Bestimmte Dateien ausschließen
+rsync -av --exclude="*.log" /quelle/ /ziel/
+
+Mehrere Ausschlüsse
+rsync -av \
+  --exclude="*.log" \
+  --exclude="tmp/" \
+  /quelle/ /ziel/
+
+Nur bestimmte Dateien
+rsync -av --include="*.txt" --exclude="*" /quelle/ /ziel/
+Wichtig: Slash am Ende
+rsync -av /quelle /ziel
+
+Ergebnis:
+/ziel/quelle/
+rsync -av /quelle/ /ziel
+
+Ergebnis:
+Inhalt von quelle → direkt nach ziel
+
+Der abschließende / ist eine der häufigsten Fehlerquellen bei rsync.
+
+Backup-Beispiel
+rsync -avh --delete /home/user/ /mnt/backup/
+-a Archivmodus
+-v Ausgabe
+-h lesbare Größen
+--delete Ziel exakt spiegeln
+Die Kombination, die man am häufigsten sieht
+rsync -avhP QUELLE ZIEL
