@@ -1,4 +1,3 @@
-# Linux-Notes DAY 2  
 cd /etc  
 [ONMO@localhost etc]$ ls /etc/profile /etc/bashrc  
 /etc/bashrc  /etc/profile  
@@ -1084,3 +1083,11 @@ rsync -avhP QUELLE ZIEL
 SSH-Agent: Speichert entsperrte SSH-Schlüssel im RAM, damit die Passphrase nicht ständig neu eingegeben werden muss.
 
 Agent Forwarding: Ermöglicht einem entfernten Server, deinen lokalen SSH-Agenten zu verwenden, ohne dass der private Schlüssel auf den Server kopiert wird.
+
+## Cron
+Facilitys
+Prioritys
+Destination
+
+
+journalctl -p err -b [Zeigt alle Error nachrichten seit Systemstart]d
