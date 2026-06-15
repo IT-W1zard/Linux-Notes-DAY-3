@@ -1087,7 +1087,322 @@ Agent Forwarding: Ermöglicht einem entfernten Server, deinen lokalen SSH-Agente
 ## Cron
 Facilitys
 Prioritys
-Destination
 
+journalctl -p err -b [Zeigt alle Error nachrichten seit Systemstart]
 
-journalctl -p err -b [Zeigt alle Error nachrichten seit Systemstart]d
+# Docker
+
+Docker Lernskript
+1. Containerisierung – Das Fundament von Docker
+Was ist ein Container?
+
+Ein Container ist eine isolierte Umgebung, die:
+
+eine Anwendung
+Bibliotheken
+Abhängigkeiten
+Konfigurationen
+
+enthält.
+
+Dadurch läuft die Anwendung überall gleich.
+
+Container vs. Virtuelle Maschine
+Container	Virtuelle Maschine
+nutzt Host-Kernel	eigenes Betriebssystem
+startet in Sekunden	startet langsamer
+wenig Ressourcen	mehr Ressourcen
+leichtgewichtig	schwergewichtig
+Vorteile
+Portabel
+Schnell
+Ressourcenschonend
+Einfach skalierbar
+Gleiche Umgebung auf jedem System
+Wichtige Begriffe
+
+Image
+= Vorlage eines Containers
+
+Container
+= laufende Instanz eines Images
+
+Dockerfile
+= Bauanleitung für Images
+
+Registry
+= Speicherort für Images
+
+Beispiel
+docker pull nginx
+docker run nginx
+2. Service Discovery & Konfigurationsspeicher
+Das Problem
+
+Angenommen:
+
+Webserver
+Datenbank
+Login-Service
+API-Service
+
+Alle laufen in eigenen Containern.
+
+Woher weiß der Webserver, wo die Datenbank läuft?
+
+Service Discovery
+
+Service Discovery bedeutet:
+
+Dienste können andere Dienste automatisch finden.
+
+Statt IP-Adressen fest einzutragen:
+
+192.168.1.55
+
+verwendet man Namen:
+
+database
+Verteilte Konfigurationsspeicher
+
+Speichern zentrale Informationen:
+
+Konfigurationen
+Cluster-Daten
+Dienstinformationen
+Statusinformationen
+Bekannte Werkzeuge
+etcd
+Consul
+ZooKeeper
+Merksatz
+
+Service Discovery sorgt dafür, dass Container andere Container automatisch finden können.
+
+3. Docker Networking
+Warum Networking?
+
+Container müssen miteinander kommunizieren.
+
+Beispiele:
+
+Webserver -> Datenbank
+API -> Redis
+Frontend -> Backend
+Port Mapping
+
+Beispiel:
+
+docker run -p 8080:80 nginx
+
+Bedeutung:
+
+Host-Port      Container-Port
+8080      ->   80
+
+Browser:
+
+http://localhost:8080
+Kommunikation zwischen Containern
+
+Container können:
+
+Daten austauschen
+Dienste bereitstellen
+API-Aufrufe durchführen
+Netzwerktypen
+Bridge
+
+Standard-Netzwerk von Docker.
+
+Container A <-> Container B
+
+auf demselben Host.
+
+Overlay
+
+Verbindet Container auf mehreren Hosts.
+
+Server A
+Server B
+Server C
+
+wirken wie ein gemeinsames Netzwerk.
+
+Host
+
+Container nutzt direkt das Netzwerk des Hosts.
+
+Merksatz
+
+Networking verbindet Container untereinander und mit der Außenwelt.
+
+4. Scheduling & Orchestrierung
+Das Problem
+
+Du hast:
+
+100 Server
+1000 Container
+
+Fragen:
+
+Wo soll ein Container gestartet werden?
+Wo ist noch Leistung frei?
+Was passiert bei Serverausfall?
+Scheduler
+
+Ein Scheduler entscheidet:
+
+Welcher Container
+auf welchem Host
+gestartet wird
+Aufgaben
+Platzierung
+
+Container auf passende Server verteilen.
+
+Skalierung
+
+Aus:
+
+1 Webserver
+
+wird:
+
+10 Webserver
+Selbstheilung
+
+Wenn ein Container abstürzt:
+
+Container kaputt
+↓
+neuer Container startet
+
+automatisch.
+
+Lastverteilung
+
+Anfragen werden auf mehrere Container verteilt.
+
+Orchestrierung
+
+Orchestrierung bedeutet:
+
+Automatische Verwaltung vieler Container.
+
+Bekannte Werkzeuge
+Docker Compose
+
+Für mehrere Container auf einem einzelnen System.
+
+Beispiel:
+
+services:
+  web:
+    image: nginx
+
+  db:
+    image: mysql
+Docker Swarm
+
+Docker-eigene Cluster-Lösung.
+
+Funktionen:
+
+Clusterverwaltung
+Skalierung
+Lastverteilung
+Kubernetes
+
+Heute der Industriestandard.
+
+Kann:
+
+Container verteilen
+Skalieren
+Selbstheilung
+Rolling Updates
+Service Discovery
+Merksatz
+
+Orchestrierung verwaltet Container automatisch über viele Server hinweg.
+
+Persistente Daten (sehr wichtig)
+Problem
+
+Container sind austauschbar.
+
+Wird ein Container gelöscht:
+
+docker rm meincontainer
+
+sind die Daten weg.
+
+Lösung: Volumes
+docker run -v /daten:/app/data nginx
+
+Daten bleiben erhalten.
+
+Die wichtigsten Docker-Befehle
+Images
+docker images
+
+Container starten
+docker run nginx
+
+Im Hintergrund starten
+docker run -d nginx
+
+Laufende Container anzeigen
+docker ps
+
+Alle Container anzeigen
+docker ps -a
+
+Container stoppen
+docker stop NAME
+
+Container löschen
+docker rm NAME
+
+Logs anzeigen
+docker logs NAME
+
+In Container wechseln
+docker exec -it NAME bash
+
+Docker Compose starten
+docker compose up -d
+
+Docker Compose stoppen
+docker compose down
+
+Klausur-Zusammenfassung (1 Minute)
+Was ist Docker?
+
+-Docker ist eine Plattform zur Ausführung von Anwendungen in Containern.
+
+Was ist ein Image?
+-Eine Vorlage für Container.
+
+Was ist ein Container?
+-Eine laufende Instanz eines Images.
+
+Was macht Service Discovery?
+-Container finden andere Dienste automatisch.
+
+Was macht Networking?
+-Container können miteinander kommunizieren.
+
+Was macht Orchestrierung?
+-Container automatisch verwalten, verteilen und skalieren.
+
+Was ist ein Volume?
+-Dauerhafter Speicher außerhalb des Containers.
+
+Was ist Kubernetes?
+-Eine Plattform zur Verwaltung großer Container-Cluster.
+
+Wenn du die Abschnitte Containerisierung, Networking, Service Discovery, Volumes, Docker Compose und Kubernetes/Swarm verstehst, hast du den Kern der gesamten DigitalOcean-Reihe bereits abgedeckt.
+Destination.
